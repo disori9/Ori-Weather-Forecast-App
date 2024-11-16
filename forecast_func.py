@@ -12,7 +12,7 @@ def get_temperature_data(place, days):
     hourly_data = content['timelines']['hourly']
     filtered_hourly_data = hourly_data[:nr_data_values]
     temperature_data = [temp['values']['temperature'] for temp in filtered_hourly_data[::4]]
-    time_data = [hour['time'][11:16] for hour in filtered_hourly_data[::4]]
+    time_data = [hour['time'] for hour in filtered_hourly_data[::4]]
     return temperature_data, time_data
 
 def get_weather_data(place, days):
@@ -25,7 +25,7 @@ def get_weather_data(place, days):
     filtered_hourly_data = hourly_data[:nr_data_values]
     weather_codes = [temp['values']['weatherCode'] for temp in filtered_hourly_data[::4]]
     weather_code_converted = [weather_code_df['weatherCode'][weather] for weather in weather_codes]
-    time_data = [hour['time'][11:16] for hour in filtered_hourly_data[::4]]
+    time_data = [hour['time'] for hour in filtered_hourly_data[::4]]
     return weather_code_converted, time_data
 
 if __name__ == "__main__":
