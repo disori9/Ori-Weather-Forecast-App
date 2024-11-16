@@ -29,4 +29,4 @@ def get_weather_data(place, days):
     return weather_code_converted, time_data
 
 if __name__ == "__main__":
-    print(get_weather_data('Dagupan', 1))
+    print(get_temperature_data('Dagupan', 1))
