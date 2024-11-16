@@ -4,7 +4,7 @@ import forecast_func as ff
 from dateutil import parser
 
 
-st.title("Weather Forecast for the Next Days")
+st.title("Ori's Weather Forecasting App")
 place = st.text_input("Place:", placeholder="Input a place to view data")
 forecast_days = st.slider("Forecast Days", 1, 5, 1, help="Select the number of forecasted days")
 data_choice = ["Temperature", "Weather"]
