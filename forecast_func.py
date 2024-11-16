@@ -10,8 +10,8 @@ def get_temperature_data(place, days):
     nr_data_values = days * 24
     hourly_data = content['timelines']['hourly']
     filtered_hourly_data = hourly_data[:nr_data_values]
-    temperature_data = [temp['values']['temperature'] for temp in filtered_hourly_data]
-    time_data = [hour['time'][11:16] for hour in filtered_hourly_data]
+    temperature_data = [temp['values']['temperature'] for temp in filtered_hourly_data[::4]]
+    time_data = [hour['time'][11:16] for hour in filtered_hourly_data[::4]]
     return temperature_data, time_data
 
 if __name__ == "__main__":
